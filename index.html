@@ -749,12 +749,16 @@ footer {
             observer.observe(card);
         });
 
-        // Form submission handler
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
-        });
+        // Form submission handler - let Formspree handle it naturally
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm && !contactForm.getAttribute('action')) {
+            // Only prevent default if there's no action attribute (not using Formspree)
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+        }
 
         // Mobile menu toggle (basic implementation)
         document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
