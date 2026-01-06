@@ -275,12 +275,15 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Datal3x. All rights reserved.</p>
+            <p>&copy; <span id="copyright-year"></span> Datal3x. All rights reserved.</p>
             <p>Built with ❤️ by the Datal3x team | <a href="https://github.com/datal3x/datal3x">GitHub</a></p>
         </div>
     </footer>
 
     <script>
+        // Set current year in footer
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
