@@ -239,12 +239,82 @@
             margin-bottom: 1rem;
         }
 
+        .support-section {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(99, 102, 241, 0.2);
+            text-align: center;
+        }
+
+        .coffee-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2rem;
+            background: linear-gradient(135deg, #FFDD00, #FBB034);
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 20px rgba(251, 176, 52, 0.3);
+            margin-top: 1rem;
+        }
+
+        .coffee-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(251, 176, 52, 0.5);
+        }
+
+        .coffee-emoji {
+            font-size: 1.3rem;
+        }
+
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: var(--gradient);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 5px 20px rgba(99, 102, 241, 0.3);
+        }
+
         /* Portfolio Grid */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
+        }
+
+        .project-card.hidden {
+            display: none;
         }
 
         .project-card {
@@ -629,9 +699,21 @@ footer {
     <section id="portfolio">
         <h2 class="section-title">Our <span class="gradient-text"> Tools</span></h2>
         <p class="section-subtitle">Powerful applications available for everyone</p>
+
+
+        <!-- Category Tabs -->
+        <div class="category-tabs">
+            <button class="tab-btn active" data-category="all">All</button>
+            <button class="tab-btn" data-category="photo">Photo</button>
+            <button class="tab-btn" data-category="productivity">Productivity</button>
+            <button class="tab-btn" data-category="finance">Finance</button>
+            <button class="tab-btn" data-category="data-science">Data Science</button>
+        </div>
+
+
         <div class="portfolio-grid">
 
-            <div class="project-card">
+            <div class="project-card" data-category="photo">
                 <div class="project-icon">✨</div>
                 <h3>Background Remover</h3>
                 <p>Advanced background removal tool for images using AI technology.</p>
@@ -643,7 +725,7 @@ footer {
                 <a href="https://background-remover.azurewebsites.net/" class="project-link">Open →</a>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" data-category="photo">
                 <div class="project-icon">🔍</div>
                 <h3>Supersize Me</h3>
                 <p>Upscaling your image to 2x using advanced AI algorithms.</p>
@@ -655,7 +737,20 @@ footer {
                 <a href="https://supersize-me.azurewebsites.net/" class="project-link">Open →</a>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" data-category="photo">
+                <div class="project-icon">📷</div>
+                <h3>Photo Organizer</h3>
+                <p>Organizes photos by date into daily folders.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Windows</span>
+                    <span class="tech-tag">Images</span>
+                    <span class="tech-tag">Productivity</span>
+                </div>
+                <a href="https://1drv.ms/u/c/067e59ffd4d9e3a8/IQAE8LYLdZ7sQZtB_YkDVreqAYMoVUd1JzhV-d-EAbHdiAk?e=PyyEWA" class="project-link">Download →</a>
+            </div>
+
+
+            <div class="project-card" data-category="productivity">
                 <div class="project-icon">🕒</div>
                 <h3>Time In Pc</h3>
                 <p>Keeps track of time spent in computer.</p>
@@ -668,17 +763,18 @@ footer {
             </div>
 
 
-            <div class="project-card">
-                <div class="project-icon">📷</div>
-                <h3>Photo Organizer</h3>
-                <p>Organizes photos by date into daily folders.</p>
+            <div class="project-card" data-category="productivity">
+                <div class="project-icon">👻</div>
+                <h3>Digital Ghost</h3>
+                <p>Prevents your computer from going to sleep, either indefinitely or for a custom duration.</p>
                 <div class="tech-tags">
                     <span class="tech-tag">Windows</span>
-                    <span class="tech-tag">Images</span>
                     <span class="tech-tag">Productivity</span>
                 </div>
-                <a href="https://1drv.ms/u/c/067e59ffd4d9e3a8/IQAE8LYLdZ7sQZtB_YkDVreqAYMoVUd1JzhV-d-EAbHdiAk?e=PyyEWA" class="project-link">Download →</a>
+                <a href="https://1drv.ms/u/c/067e59ffd4d9e3a8/IQAX1PLQUXfcTbbwapCDuVWgAX_TlRCLxIJAstVtrPYu-wU?e=WP4who" class="project-link">Download →</a>
             </div>
+
+
             
         </div>
     </section>
@@ -697,6 +793,13 @@ footer {
             time managing tools and more time building what matters.
           </p>
             
+            <div class="support-section">
+                <p>If you find these tools useful and would like to support this effort to keep going, we'd really appreciate it!</p>
+                <a href="https://www.buymeacoffee.com/datal3x" target="_blank" rel="noopener noreferrer" class="coffee-button">
+                    <span class="coffee-emoji">☕</span>
+                    Buy Me a Coffee
+                </a>
+            </div>
         </div>
     </section>
 
@@ -817,6 +920,29 @@ footer {
                 navLinks.style.background = 'var(--light-gray)';
                 navLinks.style.padding = '1rem';
             }
+        });
+
+        // Category filtering
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active tab
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const category = btn.getAttribute('data-category');
+
+                // Filter cards
+                projectCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
         });
     </script>
 </body>
