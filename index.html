@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DATAL3x</title>
-    <link rel="icon" type="image/png" href="https://datal3x.github.io/500.png">
+    <link rel="icon" type="image/png" href="datal3x-icon.png">
     <style>
         :root {
             --primary: #6366f1;
@@ -61,12 +61,17 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             font-size: 1.5rem;
             font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #000000;
+        }
+
+        .logo-icon {
+            width: 28px;
+            height: 28px;
         }
 
         .nav-links {
@@ -673,7 +678,7 @@ footer {
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">DATAL3x</div>
+            <div class="logo"><img src="datal3x-icon.svg" alt="DATAL3x" class="logo-icon">DATAL3x</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#portfolio">Tools</a></li>
@@ -810,15 +815,27 @@ footer {
                  </div>
                 <a href="https://classicregressor.azurewebsites.net/" target="_blank" class="project-link">Open →</a>
             </div>
-            
-            
+
+
+            <div class="project-card" data-category="data-science">
+                <div class="project-icon">🧮</div>
+                <h3>AB Calculator</h3>
+                <p>Statistical toolkit for A/B testing — calculate required sample sizes, test conversion rates with z-tests, and compare continuous metrics with t-tests.</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Web</span>
+                    <span class="tech-tag">Statistics</span>
+                </div>
+                <a href="https://ab-calculator.azurewebsites.net/" target="_blank" class="project-link">Open →</a>
+            </div>
+
+
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
-        <h2 class="section-title">About <span class="gradient-text">Datal3x</span></h2>
-        <p class="section-subtitle">Applied Data Labs</p>
+        <h2 class="section-title"><span style="color: var(--secondary);">About</span> DATAL3x</h2>
+        <p class="section-subtitle" style="color: var(--secondary);">Applied Data Labs</p>
         <div class="about-content fade-in">
             <p>
                 DATAL3x builds practical tools designed to remove friction from everyday work.
