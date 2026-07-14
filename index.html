@@ -447,6 +447,21 @@
             line-height: 1.6;
         }
 
+        /* Optional preview banner at the top of a card (bleeds to the card edges).
+           Reusable: add <img class="project-preview" ...> as the first child of any
+           .project-card to give it a hero image. object-fit keeps every card's
+           banner the same height regardless of the source aspect ratio. */
+        .project-preview {
+            display: block;
+            width: calc(100% + 4rem);
+            margin: -2rem -2rem 1.5rem -2rem;
+            height: 200px;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 20px 20px 0 0;
+            background: #101115;
+        }
+
         .tech-tags {
             display: flex;
             flex-wrap: wrap;
@@ -702,6 +717,7 @@
             </a>
 
             <a class="project-card" data-category="productivity" href="https://github.com/datal3x/datal3x.github.io/releases/tag/tomatick-v0.10.0" target="_blank" style="text-decoration:none;">
+                <img class="project-preview" src="img/tomatick-zen.png" alt="Tomatick — the glowing coral focus dial" loading="lazy">
                 <div class="project-icon">🍅</div>
                 <h3>Tomatick</h3>
                 <p>The most beautiful focus timer for Android. A hand-drawn glowing dial, a pomodoro focus timer, and layered ambient sounds for deep work. Free, offline, no ads.</p>
